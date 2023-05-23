@@ -10,7 +10,7 @@ const DashboardTab = () => {
           className={`tab tab-bordered tab-md ${
             path === "/dashboard/user" && "tab-active"
           }`}
-          href="/dashboard/user/profile"
+          href="/dashboard/user"
         >
           Profile
         </a>

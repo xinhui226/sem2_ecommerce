@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Hero, Input } from "react-daisyui";
-import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { login } from "../../api/authApi";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { invalidEmail } from "../../utils/userValidation";
 import { useAuth } from "../../context/authContext";
 import localforage from "localforage";
@@ -62,9 +61,12 @@ const Login = () => {
   return (
     <div className="py-7 px-3 md:px-10">
       <Toaster />
-      <a href="/">
-        <Button className="bg-slate-800 border-none">Back to homepage</Button>
-      </a>
+      <Button
+        className="bg-slate-800 border-none"
+        onClick={() => redirect("/")}
+      >
+        Back to homepage
+      </Button>
       <div className="flex justify-center items-center md:min-h-[80vh]">
         <Hero>
           <Hero.Content className="flex-col lg:flex-row-reverse p-0">

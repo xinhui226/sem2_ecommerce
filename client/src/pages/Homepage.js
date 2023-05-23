@@ -45,12 +45,11 @@ const Homepage = () => {
             width={320}
             height={270}
             className="rounded-3xl block mx-auto"
-            priority
           />
         </header>
         <h1 className="text-lg font-medium my-7">All Products</h1>
         <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 py-7">
-          {products &&
+          {products?.products?.length > 0 &&
             products?.products?.map((product) => (
               <CustomerProductcard
                 product={product}
