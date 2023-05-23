@@ -62,10 +62,11 @@ const AUser = () => {
           bordered={false}
           placeholder="Select status"
           size="large"
+          className="w-fit"
           onChange={(e) => setFilterStatus(e)}
           value={filterStatus}
         >
-          <Option value={"All"}>All</Option>
+          <Option value={"All"}>All status</Option>
           <Option value={"pending"}>pending</Option>
           <Option value={"in progress"}>in progress</Option>
           <Option value={"completed"}>completed</Option>

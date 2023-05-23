@@ -54,7 +54,7 @@ const Homepage = () => {
             products?.products?.map((product) => (
               <CustomerProductcard
                 product={product}
-                key={product._id}
+                key={product?._id}
                 cart={cart}
                 setCart={setCart}
               />

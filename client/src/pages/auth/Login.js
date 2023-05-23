@@ -62,6 +62,9 @@ const Login = () => {
   return (
     <div className="py-7 px-3 md:px-10">
       <Toaster />
+      <a href="/">
+        <Button className="bg-slate-800 border-none">Back to homepage</Button>
+      </a>
       <div className="flex justify-center items-center md:min-h-[80vh]">
         <Hero>
           <Hero.Content className="flex-col lg:flex-row-reverse p-0">
