@@ -96,11 +96,11 @@ const ProductDetail = () => {
               )}
               {!auth?.user && (
                 <>
-                  <p className="mt-3 text-end">
+                  <p className="mt-3 text-center">
                     Kindly login to add item to cart
                   </p>
                   <Button
-                    className="w-fit block ms-auto"
+                    className="w-fit block mx-auto"
                     onClick={() =>
                       redirect("/login", { state: "/product/" + product.slug })
                     }
