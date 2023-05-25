@@ -96,11 +96,14 @@ const Cart = () => {
         subtotal: item.price * item.cartqty,
       })
     );
-    const res = await axios.post("http://localhost:7100/orders", {
-      details: info,
-      total: totalPrice,
-      cart: myCart,
-    });
+    const res = await axios.post(
+      "https://ecom-backend-service.onrender.com/orders",
+      {
+        details: info,
+        total: totalPrice,
+        cart: myCart,
+      }
+    );
 
     if (res.status === 200) {
       const emptyCart = async () => {
@@ -125,8 +128,8 @@ const Cart = () => {
                   cart?.map((c, idx) => (
                     <Card side="sm">
                       <Card.Image
-                        src={`http://localhost:7100/products/img/${c._id}`}
-                        alt={c.name}
+                        src={`https://ecom-backend-service.onrender.com/products/img/${c._id}`}
+                        alt={c?.name}
                         className="object-cover"
                         width="max-w-[200px]"
                         height="max-h-[100px]"
@@ -139,9 +142,9 @@ const Cart = () => {
                             onClick={() => removeCartItem(idx)}
                           />
                         </div>
-                        <Card.Title tag="h2">{c.name}</Card.Title>
+                        <Card.Title tag="h2">{c?.name}</Card.Title>
                         <p>{c.desc.substring(0, 30)}...</p>
-                        <p>price : RM {c.price}</p>
+                        <p>price : RM {c?.price}</p>
                         <div className="flex gap-2 justify-end">
                           <Button
                             className="btn-xs"
@@ -149,17 +152,17 @@ const Cart = () => {
                           >
                             -
                           </Button>
-                          {c.cartqty}
+                          {c?.cartqty}
                           <Button
                             className="btn-xs"
-                            disabled={c.cartqty >= c.qty}
+                            disabled={c?.cartqty >= c?.qty}
                             onClick={() => increase(idx)}
                           >
                             +
                           </Button>
                         </div>
                         <p className="text-end">
-                          total : RM{c.price * c.cartqty}
+                          total : RM{c?.price * c?.cartqty}
                         </p>
                       </Card.Body>
                     </Card>

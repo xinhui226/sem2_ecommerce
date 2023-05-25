@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import { invalidEmail } from "../utils/userValidation";
 import { toast } from "react-hot-toast";
 import { Button, Form, Input } from "react-daisyui";
-import { sendMail } from "../utils/sendMail";
+// import { sendMail } from "../utils/sendMail";
 import axios from "axios";
 
 const Contactpage = () => {
@@ -34,11 +34,14 @@ const Contactpage = () => {
     if (!email || !subject || !content)
       return toast.error("Please fill in all the fields");
 
-    const res = await axios.post("http://localhost:7100/sendMail", {
-      email,
-      subject,
-      content,
-    });
+    const res = await axios.post(
+      "https://ecom-backend-service.onrender.com/sendMail",
+      {
+        email,
+        subject,
+        content,
+      }
+    );
     if (res.status === 200) {
       toast.success("Message sent successfully");
       setMessage({
